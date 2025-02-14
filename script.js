@@ -1,9 +1,10 @@
-const noBtn = document.getElementById("noBtn");
+document.getElementById("noBtn").addEventListener("mouseover", function() {
+    const btn = this;
+    const maxX = window.innerWidth - btn.offsetWidth - 20;
+    const maxY = window.innerHeight - btn.offsetHeight - 20;
 
-noBtn.addEventListener("mouseover", function() {
-    const x = Math.random() * (window.innerWidth - 100);
-    const y = Math.random() * (window.innerHeight - 50);
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
 
-    this.style.left = `${x}px`;
-    this.style.top = `${y}px`;
+    btn.style.transform = `translate(${randomX}px, ${randomY}px)`;
 });
