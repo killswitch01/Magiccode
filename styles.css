@@ -1,82 +1,83 @@
-/* General Styles */
+/* Global styles */
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
     text-align: center;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
-    padding: 10px;
+    overflow: hidden;
 }
 
-/* Container */
+/* Floating text animation */
+.floating-text {
+    font-size: 28px;
+    color: #d6336c;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Container box */
 .container {
     background: white;
-    padding: 20px;
+    padding: 30px;
     border-radius: 12px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-    max-width: 90%;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
     animation: fadeIn 1s ease-in-out;
 }
 
-/* Text Styling */
-h1 {
-    font-size: 26px;
-    color: #d6336c;
-    margin-bottom: 20px;
+/* Buttons */
+.buttons {
+    margin-top: 20px;
 }
 
-/* Button Styles */
 .btn {
     padding: 12px 24px;
-    font-size: 18px;
+    font-size: 20px;
     border: none;
     cursor: pointer;
     border-radius: 8px;
     margin: 10px;
     text-decoration: none;
     display: inline-block;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    font-weight: bold;
 }
 
-.btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-}
-
+/* Yes button */
 .yes-btn {
     background-color: #28a745;
     color: white;
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
 }
 
+.yes-btn:hover {
+    background-color: #218838;
+    box-shadow: 0 6px 12px rgba(40, 167, 69, 0.5);
+}
+
+/* No button */
 .no-btn {
     background-color: #dc3545;
     color: white;
+    box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3);
     position: absolute;
-    transition: left 0.5s ease, top 0.5s ease;
+    transition: transform 0.5s ease, left 0.5s ease, top 0.5s ease;
 }
 
-/* Fade-in Animation */
-.fade-in {
-    opacity: 0;
-    animation: fadeIn 1s ease-in-out forwards;
+.no-btn:hover {
+    background-color: #c82333;
+    box-shadow: 0 6px 12px rgba(220, 53, 69, 0.5);
 }
 
-/* Animations */
+/* Fade-in effect */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Mobile Optimization */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 22px;
-    }
-    .btn {
-        font-size: 16px;
-        padding: 10px 20px;
-    }
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
 }
